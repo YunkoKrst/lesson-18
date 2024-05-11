@@ -5,11 +5,19 @@ const Calculator = (() => {
 
     // Приватні методи
     function add(x, y) {
+        if (typeof x !== 'number' || typeof y !== 'number') {
+            console.log('Значення повинні бути числами.');
+            return NaN;
+        }
         memory = x + y;
         return memory;
     }
 
     function subtract(x, y) {
+        if (typeof x !== 'number' || typeof y !== 'number') {
+            console.log('Значення повинні бути числами.');
+            return NaN;
+        }
         memory = x - y;
         return memory;
     }
@@ -38,6 +46,8 @@ const Calculator = (() => {
 })();
 
 
+console.log(Calculator.add(undefined)); 
+console.log(Calculator.add('5', 3)); 
 console.log(Calculator.add(5, 3)); 
 console.log(Calculator.subtract(5, 3));
 console.log(Calculator.getMemoryAsString()); 
